@@ -10,6 +10,3 @@ class Documents(models.Model):
     datestamp = models.DateTimeField(auto_now_add=True) 
     process = models.BooleanField(default=False)
     document = models.FileField(upload_to='uploads', default=1)
-
-    class Meta:
-        db_table = 'uploads'

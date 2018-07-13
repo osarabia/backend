@@ -12,4 +12,3 @@ class Gastos(models.Model):
 
     class Meta:
         unique_together = (('user_id', 'fecha'),)
-        db_table = 'gastos'
