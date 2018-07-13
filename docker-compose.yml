@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python spa_gastos/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    links:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: verystrong
+      MYSQL_DATABASE: spa_gastos
+      MYSQL_USER: gastos
+      MYSQL_PASSWORD: PH1Jkk1V
+    ports:
+      - "3306:3306"
